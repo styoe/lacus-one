@@ -1,0 +1,93 @@
+.ui-keyboard-input{
+  display: block;
+  margin: 0px 0px;
+  width: 100%;
+  padding: 5px 5px 10px;
+  border: none;
+  border-bottom: 1px solid #486871;
+  outline: none;
+  background: transparent;
+  color: #FFF;
+}
+
+.keyboard-wrapper{
+  position: relative;
+
+  .ui-keyboard{
+    display: block;
+    position: absolute;
+    z-index: 10000;
+
+    .ui-keyboard-preview-wrapper{
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: -10000px;
+    }
+
+    .ui-keyboard-keyset{
+      background: $trans-med-bg;
+      text-align: center;
+      padding: 3px;
+
+
+      button{
+        background: transparent;
+        border: none;
+        padding: 0px;
+
+        span{
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          display: block;
+          text-align: center;
+          background: $trans-med-bg;
+          margin: 1px;
+        }
+
+        &.ui-keyboard-actionkey{
+          span{
+            width: 94px;
+          }
+        }
+
+        &.ui-keyboard-bksp{
+          span{
+            width: 52px;
+          }
+        }
+
+
+        &.ui-keyboard-space{
+          span{
+            width: 280px;
+          }
+        }
+
+        &.ui-keyboard-accept{
+          span{
+            width: 94px;
+            font-weight:700;
+          }
+        }
+
+        &.ui-keyboard-shift{
+          span{
+            width: 94px;
+          }
+        }
+
+        &.ui-keyboard-normal{
+          span{
+            width: 94px;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}
+

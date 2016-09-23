@@ -1,0 +1,31 @@
+> eres-one@1.0.0 start /home/pi/eres-one/app
+> electron main.js
+
+/home/pi/eres-one/app/node_modules/serialport/build/serialport.node
+/home/pi/eres-one/app/node_modules/serialport/build/Debug/serialport.node
+/home/pi/eres-one/app/node_modules/serialport/build/Release/serialport.node
+App threw an error during load
+Error: Module version mismatch. Expected 49, got 47.
+    at Error (native)
+    at process.module.(anonymous function) [as dlopen] (ELECTRON_ASAR.js:167:20)
+    at Object.Module._extensions..node (module.js:568:18)
+    at Object.module.(anonymous function) [as .node] (ELECTRON_ASAR.js:167:20)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+    at Module.require (module.js:468:17)
+    at require (internal/module.js:20:19)
+    at bindings (/home/pi/eres-one/app/node_modules/bindings/bindings.js:77:44)
+A JavaScript error occurred in the main process
+Uncaught Exception:
+Error: Module version mismatch. Expected 49, got 47.
+    at Error (native)
+    at process.module.(anonymous function) [as dlopen] (ELECTRON_ASAR.js:167:20)
+    at Object.Module._extensions..node (module.js:568:18)
+    at Object.module.(anonymous function) [as .node] (ELECTRON_ASAR.js:167:20)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+    at Module.require (module.js:468:17)
+    at require (internal/module.js:20:19)
+    at bindings (/home/pi/eres-one/app/node_modules/bindings/bindings.js:77:44)

@@ -1,0 +1,45 @@
+{
+  "name": "eres-one",
+  "version": "1.0.0",
+  "description": "IOT controller",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "",
+    "package": "electron-packager ./app --platform=win32 --arch=ia32 --prune --out=./dist --version=1.0.2 --overwrite --icon=./build/icon.ico --ignore=node_modules/babel --ignore=node_modules/gulp --ignore=node_modules/node-sass"
+  },
+  "author": "Led",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "asar": "^0.11.0",
+    "electron-prebuilt": "^1.2.0"
+  },
+  "build": {
+    "productName": "eres-one",
+    "app-bundle-id": "eres-one.electron",
+    "app-category-type": "public.app-category.productivity",
+    "iconUrl": "",
+    "osx": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "win": {
+      "iconUrl": ""
+    }
+  }
+}

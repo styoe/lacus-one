@@ -1,0 +1,146 @@
+*{
+  box-sizing:border-box;
+}
+
+html{
+  width: 100%;
+  min-height: 100%;
+  padding:0;
+  margin:0;
+  display:block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background: url(../assets/main-bg-cool.jpg) center center no-repeat;
+  background-size: cover;
+  display:block;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+ * Eyecandy
+*/
+.main-app-wrapper{
+
+  &--modal-open{
+    .main-content-wrapper{
+      @include blur();
+    }
+  }
+
+}
+
+
+
+/*
+ * Base Elements
+*/
+.close-btn{
+  position:absolute;
+  top:0;
+  right:0;
+  width: 25px;
+  height: 25px;
+  display: block;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFF;
+  font-style: normal;
+  background: transparent;
+  opacity: 0.8;
+  //background: rgba(255, 255, 255, 0.1);
+  //text-shadow: -1px -1px 0px #25b3e2;
+  cursor: pointer;
+
+  &:after{
+    content: "x";
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    color: #FFF;
+  }
+}
+
+.add-btn{
+  width: 60px;
+  height: 60px;
+  display: block;
+  background: $trans-bg;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFF;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.edit-wrapper{
+  position: relative;
+  padding-right: 20px;
+
+  &:after{
+    position: absolute;
+    top:5px;
+    right: 2px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    background: url(../assets/edit.png) center center no-repeat;
+    background-size: 12px;
+  }
+}
+
+.ui-sortable .ui-sortable-item{
+  cursor: auto;
+}
+
+.sortable-handle{
+  width: 25px;
+  height: 25px;
+  background: url(../assets/sort.png) center center no-repeat;
+  background-size: 13px 13px;
+  cursor: move;
+}
+
+
+.sort-target{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  border: 1px dashed $ok-green;
+  z-index: 1000;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+  /*
+  &:after{
+    content:"Click to sort!";
+    display: block;
+    color: $ok-green;
+    position: absolute;
+    top:15%;
+    left:0;
+    text-align: center;
+    width: 100%;
+  }
+  */
+}

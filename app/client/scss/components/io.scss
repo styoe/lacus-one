@@ -1,0 +1,133 @@
+.io{
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0px;
+  position: relative;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 10px;
+
+  &:after{
+    content: "";
+    width: 6px;
+    height: 10px;
+    background: $trans-bg;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  &:last-child{
+    margin-bottom: 0px;
+
+    &:after{
+      display: none;
+    }
+  }
+
+  header{
+    background: $trans-bg;
+
+  }
+
+  &__id{
+    position: absolute;
+    top: 7px;
+    left: 30px;
+    opacity: 0.5;
+    font-size: 10px;
+  }
+
+  &__edit{
+    position: relative;
+    padding-right: 20px;
+    background: transparent;
+    border: none;
+    color: #FFF;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size:12px;
+    font-weight: 700;
+  }
+
+  &__sortable-handle{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .io-list{
+    padding:10px;
+    border: 5px solid $trans-bg;
+    border-top: none;
+  }
+
+  .timerange{
+    background: $trans-bg;
+    text-align: center;
+    padding-bottom: 15px;
+
+    label{
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 2px 2px 2px 10px;
+      opacity: 0.5;
+    }
+
+    .timepicker{
+      width: 65px;
+    }
+
+  }
+
+  .temperature, .humidity {
+    background: $trans-bg;
+    text-align: center;
+    padding-bottom: 15px;
+
+    label {
+      font-size: 12px;
+      text-transform: uppercase;
+      padding: 2px 2px 2px 10px;
+      opacity: 0.5;
+    }
+
+    .rangepicker {
+      width: 65px;
+      margin-left: 10px;
+    }
+
+    select {
+      box-sizing: border-box;
+      background: transparent;
+      border: none;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 12px;
+      margin: 0 0 0 10px;
+    }
+
+  }
+
+  &--add{
+    background: transparent;
+    height: 80px;
+    border: none;
+    border-bottom: 10px solid transparent;
+    margin: 0px;
+
+    &:after{
+      background: $trans-bg;
+    }
+  }
+
+  &--gate{
+    & > .sort-target{
+      height: 34px;
+    }
+  }
+
+}

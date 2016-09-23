@@ -1,0 +1,23 @@
+.component-edit{
+  width: 100%;
+  display: block;
+  padding: 10px;
+
+  &__name{
+    display: block;
+    margin: 0px 0px;
+    width: 100%;
+    padding: 5px 5px 10px;
+    border: none;
+    border-bottom: 1px solid #486871;
+    outline: none;
+    background: transparent;
+    color: #FFF;
+  }
+
+  .flow-list{
+    width: 100%;
+    display: block;
+  }
+
+}
