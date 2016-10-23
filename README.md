@@ -2,22 +2,22 @@
 
 A small electron application for raspberry pi serialport manipulation.
 
-Add new flow
+------------------ Add new flow ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss1.png)
 
-Edit flow
+------------------  Edit flow ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss2.png)
 
-Add some gates and components
+------------------  Add some gates and components ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss3.png)
 
-Available gates and components
+------------------  Available gates and components ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss4.png)
 
-Turn flow off or on
+------------------  Turn flow off or on ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss5.png)
 
-Wrapp it up in something prettier than this
+------------------ Wrapp it up in something prettier than this ------------------
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/10/IMG-1474815545852-V.jpg)
 
 ![alt tag](http://thecodefather.eu/wp-content/uploads/2016/10/IMG-1474815527127-V.jpg)
