@@ -7,16 +7,13 @@
     "disallowQuotedKeysInObjects": true,
     "disallowSpaceAfterObjectKeys": true,
     "disallowSpaceAfterPrefixUnaryOperators": true,
-    "disallowSpacesInFunction": {
-        "beforeOpeningRoundBrace": true
-    },
     "disallowSpacesInsideParentheses": true,
     "disallowTrailingWhitespace": true,
-    "maximumLineLength": 120,
+    "maximumLineLength": 220,
     "requireCamelCaseOrUpperCaseIdentifiers": true,
     "requireCapitalizedComments": true,
     "requireCapitalizedConstructors": true,
-    "requireCurlyBraces": true,
+    "requireCurlyBraces": false,
     "requireSpaceAfterKeywords": [
         "if",
         "else",
@@ -38,11 +35,14 @@
     "requireSpacesInFunction": {
         "beforeOpeningCurlyBrace": true
     },
-    "requireTrailingComma": {
-        "ignoreSingleLine": true
-    },
+    "disallowTrailingComma": false,
     "requireEarlyReturn": true,
     "validateIndentation": 2,
     "validateLineBreaks": "CRLF",
-    "validateQuoteMarks": "'"
+    "validateQuoteMarks": "'",
+    "maxErrors": 10000,
+    "excludeFiles": [
+        "./client/js/components/io-bodies/humidity.js"
+    ],
+    "requireShorthandArrowFunctions": false
 }

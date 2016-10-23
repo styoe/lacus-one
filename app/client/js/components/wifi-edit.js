@@ -37,7 +37,6 @@ const WifiPasswordModal = React.createClass({
                 onChange={(val)=>this.updatePassword(val)} />
             <button className="btn" onClick={()=> this.connect()}>Connect</button>
         </div>
-
     }
 });
 

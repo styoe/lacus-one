@@ -1,30 +1,29 @@
-module.exports = function( input, io, appState, io_subtypes, devices ){
+module.exports = function (input, io, appState, ioSubtypes, devices) {
 
-    if( !input ) return 0;
+    if (!input) return 0;
 
     var val = parseInt(io.options.value),
         type = io.options.type;
 
     var tmphig = null;
 
-    for(var i=0; i<devices.list.length; i++){
-        // console.log(devices.list[i].uid, io.uid);
-        if(devices.list[i].uid === 'dht22_system'){
-            tmphig = devices.list[i];
-            break;
-        }
+    for (var i = 0; i < devices.list.length; i++) {
+      if (devices.list[i].uid === 'dht22_system') {
+        tmphig = devices.list[i];
+        break;
+      }
     }
 
-    if(!tmphig) throw Error('tmphig sensor unknown!!!');
+    if (!tmphig) throw Error('tmphig sensor unknown!!!');
 
-    if ( type === '>' && tmphig.temperature > val ){
-        return 1;
+    if (type === '>' && parseInt(tmphig.temperature) > parseInt(val)) {
+      return true;
     }
 
-    if ( type === '<' && tmphig.temperature < val ){
-        return 1;
+    if (type === '<' && parseInt(tmphig.temperature) < parseInt(val)) {
+      return true;
     }
 
-    return 0
+    return false;
 
-}
+  };

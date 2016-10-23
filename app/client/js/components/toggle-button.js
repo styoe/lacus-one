@@ -1,5 +1,5 @@
-const ToggleButton = ({data, toggleComponent}) => (
-    <button className="component__toggle" onClick={ ()=> toggleComponent() }>
+const ToggleButton = ({ data, toggleComponent }) => (
+    <button className='component__toggle' onClick={ ()=> toggleComponent() }>
     </button>
 );
 

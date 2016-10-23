@@ -1,9 +1,9 @@
 /*
-* Server 
+* Server
 */
 'use strict';
 
-const   {PORT} = require('./../conf'),
+const   { PORT } = require('./../conf'),
         http = require('http'),
         dispatcher = require('./http-dispatcher'),
         ipProvider = require('../utils/ip-provider'),
@@ -11,9 +11,10 @@ const   {PORT} = require('./../conf'),
 
 let     instance;
 
-const init = function() {
+const init = function () {
 
-    if(init.initialized){ return false; }
+    if (init.initialized) { return false; }
+
     init.initialized = true;
 
     dispatcher.init();
@@ -21,13 +22,13 @@ const init = function() {
     instance = http.createServer(handleRequest);
 
     // Lets start our server
-    instance.listen(PORT, function() {
-        console.log('Server listening on: %s:%s',ips[0].address, PORT);
+    instance.listen(PORT, function () {
+        console.log('Server listening on: %s:%s', ips[0].address, PORT);
       });
 
   };
 
-const handleRequest = function(request, response) {
+const handleRequest = function (request, response) {
     try {
       dispatcher.instance.dispatch(request, response);
     } catch (err) {
@@ -35,11 +36,9 @@ const handleRequest = function(request, response) {
     }
   };
 
-
 module.exports = {
     init: init,
-    isInitialized: function() {
+    isInitialized: function () {
         return !!init.initialized;
       },
-    instance: instance
   };

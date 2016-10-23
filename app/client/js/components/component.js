@@ -1,33 +1,31 @@
 const React = require('react'),
     { connect } = require('react-redux'),
-    {addComponent, removeComponent, toggleComponent, editComponent} = require('../actions/components'),
-    {openModal} = require('../actions/modals'),
+    { addComponent, removeComponent, toggleComponent, editComponent } = require('../actions/components'),
+    { openModal } = require('../actions/modals'),
     ComponentEdit = require('../components/component-edit');
-
-
 
 const Component = React.createClass({
 
     shouldComponentUpdate(nextProps, nextState) {
-        return true;
+      return true;
     },
 
-    render: function() {
+    render: function () {
 
         return (
             <div >
-                <div className={"component " + this.props.toggleClass}>
+                <div className={'component ' + this.props.toggleClass}>
                     <header>
-                        <i className="sortable-handle component__sortable-handle" onClick={this.props.sortHandleOnClick}></i>
+                        <i className='sortable-handle component__sortable-handle' onClick={this.props.sortHandleOnClick}> </i>
                         <small>{this.props.data.id}</small>
-                        <i onClick={ () => this.props.removeComponent(this.props.data.id) } className="component__remove-btn close-btn"></i>
+                        <i onClick={ () => this.props.removeComponent(this.props.data.id) } className='component__remove-btn close-btn'> </i>
                     </header>
 
-                    <button className={"component__toggle component__toggle--" + this.props.toggleBtnClass} onClick={ ()=> this.props.toggleComponent(this.props.data.id) }>
+                    <button className={'component__toggle component__toggle--' + this.props.toggleBtnClass} onClick={ ()=> this.props.toggleComponent(this.props.data.id) }>
                         {this.props.toggleText}
                     </button>
 
-                    <button className="component__edit edit-wrapper" onClick={() => this.props.editComponent(this.props.data)}>
+                    <button className='component__edit edit-wrapper' onClick={() => this.props.editComponent(this.props.data)}>
                         {this.props.name}
                     </button>
 
@@ -35,9 +33,9 @@ const Component = React.createClass({
                 </div>
 
             </div>
-        )
-    }
-});
+        );
+      },
+  });
 
 const mapStateToProps = (state, ownProps) => {
     var toggleText = ownProps.data.active ? 'ON' : 'OFF',
@@ -49,25 +47,25 @@ const mapStateToProps = (state, ownProps) => {
         name: ownProps.data.name,
         toggleText: toggleText,
         toggleBtnClass: toggleBtnClass,
-        toggleClass: toggleClass
-    }
-};
-
+        toggleClass: toggleClass,
+      };
+  };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         removeComponent: (id) => {
-            dispatch(removeComponent(id))
-        },
-        toggleComponent: (id) => {
-            dispatch(toggleComponent(id))
-        },
-        editComponent: (component) => {
-            dispatch(openModal(component, ComponentEdit))
-        }
-    }
-};
+            dispatch(removeComponent(id));
+          },
 
+        toggleComponent: (id) => {
+            dispatch(toggleComponent(id));
+          },
+
+        editComponent: (component) => {
+            dispatch(openModal(component, ComponentEdit));
+          },
+      };
+  };
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(Component);
 

@@ -3,58 +3,58 @@ const { GET_WIFIS, CONNECT_TO_WIFI, SET_LOADING_STATE, UPDATE_APP_SENSORS, UPDAT
 
 function app(state = {}, action) {
 
-    switch (action.type) {
-        case SET_LOADING_STATE:
+  switch (action.type) {
+  case SET_LOADING_STATE:
 
-            var new_state = _.cloneDeep(state);
-            new_state.is_loading = action.is_loading;
+    var newState = _.cloneDeep(state);
+    newState.isLoading = action.isLoading;
 
-            return new_state;
+    return newState;
 
-        case UPDATE_APP_SENSORS:
+  case UPDATE_APP_SENSORS:
 
-            var new_state = _.cloneDeep(state);
-            new_state.temperature = action.data.temperature;
-            new_state.humidity = action.data.humidity;
-            return new_state;
+    var newState = _.cloneDeep(state);
+    newState.temperature = action.data.temperature;
+    newState.humidity = action.data.humidity;
+    return newState;
 
-        case UPDATE_APP_DIMENSIONS:
+  case UPDATE_APP_DIMENSIONS:
 
-            var new_state = _.cloneDeep(state);
-            new_state.width = action.data.width;
-            new_state.height = action.data.height;
-            return new_state;
+    var newState = _.cloneDeep(state);
+    newState.width = action.data.width;
+    newState.height = action.data.height;
+    return newState;
 
-        case GET_WIFIS:
+  case GET_WIFIS:
 
-            var new_state = _.cloneDeep(state);
+    var newState = _.cloneDeep(state);
 
-            if(action.wifis.success){
-                new_state.wifis = action.wifis.networks;
-            }else{
-                alert('Wifi scanning error. Try again!');
-            }
-
-            return new_state;
-
-        case CONNECT_TO_WIFI:
-
-            var new_state = _.cloneDeep(state);
-
-            if(action.result.success){
-                alert('success');
-            }else{
-                alert('Wifi scanning error. Try again!');
-            }
-
-            console.log(action.result);
-
-            return new_state;
-
-
-        default:
-            return state
+    if (action.wifis.length) {
+      newState.wifis = action.wifis;
+    }else {
+      alert('No networks found, try again.');
     }
+
+    return newState;
+
+  case CONNECT_TO_WIFI:
+
+    var newState = _.cloneDeep(state);
+
+    if (action.result.success) {
+      alert('success');
+    }else {
+      alert('Wifi scanning error. Try again!');
+    }
+
+    console.log(action.result);
+
+    return newState;
+
+  default:
+    return state;
+
+  }// jscs:ignore validateIndentation
 
 }
 

@@ -1,10 +1,11 @@
-module.exports = function(list, parent_id){
-    let new_list = list.reduce(function(acc, item){
-        if(item.parent_id === parent_id){
-            acc.push(item);
+module.exports = function (list, parentId) {
+    let newList = list.reduce(function (acc, item) {
+        if (item.parentId === parentId) {
+          acc.push(item);
         }
-        return acc;
-    }, []);
 
-    return new_list.sort((a, b) => a.order - b.order);
-};
+        return acc;
+      }, []);
+
+    return newList.sort((a, b) => a.order - b.order);
+  };

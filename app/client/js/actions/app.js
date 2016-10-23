@@ -5,55 +5,50 @@ const SET_LOADING_STATE = 'SET_LOADING_STATE',
     GET_WIFIS = 'GET_WIFIS',
     CONNECT_TO_WIFI = 'CONNECT_TO_WIFI',
     CONF = require('../../conf'),
-    {getAppWifis, connectAppToWifi} = CONF.IS_ELECTRON ? require('../ipc') : require('../http');
+    { getAppWifis, connectAppToWifi } = CONF.IS_ELECTRON ? require('../ipc') : require('../http');
 
-
-function setLoadingState(is_loading) {
+const setLoadingState = function (isLoading) {
     return {
         type: SET_LOADING_STATE,
-        is_loading: is_loading
-    }
-}
+        isLoading: isLoading,
+      };
+  };
 
-
-const updateAppSensors = function(data){
-    return{
+const updateAppSensors = function (data) {
+    return {
         type: UPDATE_APP_SENSORS,
-        data: data
-    }
-}
+        data: data,
+      };
+  };
 
-
-const updateAppDimensions = function(data){
-    return{
+const updateAppDimensions = function (data) {
+    return {
         type: UPDATE_APP_DIMENSIONS,
-        data: data
-    }
-}
+        data: data,
+      };
+  };
 
-
-const getWifis = function(){
+const getWifis = function () {
     const wifis = getAppWifis();
 
-    return{
+    return {
         type: GET_WIFIS,
-        wifis: wifis
-    }
-}
+        wifis: wifis,
+      };
+  };
 
-const connectToWifi = function (wifi){
+const connectToWifi = function (wifi) {
 
-    console.log('connectToWifi action'); 
+    console.log('connectToWifi action');
 
     const result = connectAppToWifi(wifi);
 
-    return{
+    return {
         type: CONNECT_TO_WIFI,
-        result: result
-    }
+        result: result,
+      };
 
-}
-
+  };
 
 module.exports = {
     SET_LOADING_STATE: SET_LOADING_STATE,
@@ -65,5 +60,5 @@ module.exports = {
     updateAppSensors: updateAppSensors,
     updateAppDimensions: updateAppDimensions,
     getWifis: getWifis,
-    connectToWifi: connectToWifi
-};
+    connectToWifi: connectToWifi,
+  };

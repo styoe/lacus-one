@@ -7,45 +7,87 @@ const config = {
     PORT: 8100,
     WINDOW_SIZE: {
         w: 800,
-        h: 450
+        h: 450,
       },
-    FRAME: true,
+    FRAME: false,
     KIOSK: false,
     SPLASH: 'file://' + __dirname + '/client/index.html',
-    TRAY_ICON: __dirname +'/assets/img/tray.png',
+    TRAY_ICON: __dirname + '/assets/img/tray.png',
     DEFAULT_PATH: 'Kliknite i odaberite direktorij',
     DEBUG: true,
     IS_RASPBERRY: false,
     DEVICE_UPDATE_INTERVAL: 2000,
-    RELAYS_CONFIG:[
+    RELAYS_CONFIG: [
         {
             uid: 'relay_1_system',
-            hardware:{
-                type: "NC",
-                pin: 7
-            }
-        }
+            hardware: {
+                type: 'NC',
+                pin: 1,
+              },
+          },
+        {
+            uid: 'relay_2_system',
+            hardware: {
+                type: 'NC',
+                pin: 0,
+              },
+          },
+        {
+            uid: 'relay_3_system',
+            hardware: {
+                type: 'NC',
+                pin: 2,
+              },
+          },
+        {
+            uid: 'relay_4_system',
+            hardware: {
+                type: 'NC',
+                pin: 3,
+              },
+          },
     ],
-    TMPHIG_CONFIG:{
+    TMPHIG_CONFIG: {
         uid: 'dht22_system',
-        pin: 2, //physical pin
-        interval: 2000
-    },
-    APP_STATE:{
+        pin: 24,
+        interval: 2000,
+      },
+    APP_STATE: {
         app: {
-            is_loading: false,
+            isLoading: false,
             temperature: 0,
             humidity: 0,
-            wifis: []
-        },
-        io_lib: [
+            wifis: [],
+          },
+        ioLib: [
             {
                 name: 'Relay 1',
                 type: 'relay',
                 subtype: 'relay',
                 uid: 'relay_1_system',
-                options: {}
-            },
+                options: {},
+              },
+            {
+                name: 'Relay 2',
+                type: 'relay',
+                subtype: 'relay',
+                uid: 'relay_2_system',
+                options: {},
+              },
+            {
+                name: 'Relay 3',
+                type: 'relay',
+                subtype: 'relay',
+                uid: 'relay_3_system',
+                options: {},
+              },
+            {
+                name: 'Relay 4',
+                type: 'relay',
+                subtype: 'relay',
+                uid: 'relay_4_system',
+                options: {},
+              },
             {
                 name: 'Temperature',
                 type: 'temperature',
@@ -53,9 +95,9 @@ const config = {
                 uid: 'temperature_system',
                 options: {
                     value: 0,
-                    type: '<'
-                }
-            },
+                    type: '<',
+                  },
+              },
             {
                 name: 'Humidity',
                 type: 'humidity',
@@ -63,9 +105,9 @@ const config = {
                 uid: 'humidity_system',
                 options: {
                     value: 0,
-                    type: '<'
-                }
-            },
+                    type: '<',
+                  },
+              },
             {
                 name: 'Time range',
                 type: 'timerange',
@@ -73,30 +115,30 @@ const config = {
                 options: {
                     start: {
                         h: '00',
-                        m: '00'
-                    },
-                    end:  {
+                        m: '00',
+                      },
+                    end: {
                         h: '00',
-                        m: '00'
-                    }
-                }
-            },
+                        m: '00',
+                      },
+                  },
+              },
             {
                 name: 'AND',
                 type: 'gate',
                 subtype: 'and',
-            },
+              },
             {
                 name: 'OR',
                 type: 'gate',
                 subtype: 'or',
-            }
+              },
 
         ],
-        components:[],
-        io:[],
-        modals: []
-    }
+        components: [],
+        io: [],
+        modals: [],
+      },
   };
 
 module.exports = config;

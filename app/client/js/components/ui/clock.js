@@ -2,26 +2,26 @@ const React = require('react');
 
 var Clock = React.createClass({
 
-    getInitialState: function(){
+    getInitialState: function () {
         return { time: 0 };
-    },
+      },
 
-    componentDidMount: function(){
+    componentDidMount: function () {
         this.timer = setInterval(this.tick, 50);
-    },
+      },
 
-    componentWillUnmount: function(){
+    componentWillUnmount: function () {
         clearInterval(this.timer);
-    },
+      },
 
-    tick: function(){
+    tick: function () {
         let d = new Date();
-        this.setState({time: d.getHours() + ' : ' + d.getMinutes()});
-    },
+        this.setState({ time: d.getHours() + ' : ' + d.getMinutes() });
+      },
 
-    render: function() { 
+    render: function () {
         return <time>{this.state.time}</time>;
-    }
-});
+      },
+  });
 
 module.exports = Clock;

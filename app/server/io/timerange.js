@@ -1,6 +1,6 @@
-module.exports = function( input, io, appState, io_subtypes, devices ){
+module.exports = function (input, io, appState, ioSubtypes, devices) {
 
-    if( !input ) return 0;
+    if (!input) return 0;
 
     var now = Date.now(),
         start = new Date(),
@@ -11,10 +11,10 @@ module.exports = function( input, io, appState, io_subtypes, devices ){
     end.setHours(parseInt(io.options.end.h));
     end.setMinutes(parseInt(io.options.end.m));
 
-    if(start.getTime() < now && end.getTime() > now) {
-        return true;
-    }else{
-        return false;
+    if (start.getTime() < now && end.getTime() > now) {
+      return true;
+    }else {
+      return false;
     }
 
-}
+  };

@@ -1,28 +1,23 @@
 const React = require('react'),
     { connect } = require('react-redux');
- 
+
 const Body = React.createClass({
-    render: function() {
+    render: function () {
         return (
-            <div className="io__body">
-
+            <div className='io__body'>
             </div>
-        )
-    }
-});
-
+        );
+      },
+  });
 
 const mapStateToProps = (state, ownProps) => {
-
     return {
-        data: ownProps.data
-    }
-};
-
+        data: ownProps.data,
+      };
+  };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
-};
-
+    return {};
+  };
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(Body);

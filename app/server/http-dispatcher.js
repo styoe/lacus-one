@@ -10,60 +10,60 @@ const   dispatcher = require('httpdispatcher'),
 
 let initialized = false;
 
-const init = function() {
+const init = function () {
 
-    if(initialized){ return false; }
+    if (initialized) { return false; }
+
     initialized = true;
 
     dispatcher.onPost('/add-guest', addGuest);
-    dispatcher.onGet('/app', function(req, res){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.readFile(__dirname + '/../client/index.html', 'utf8', function(err, html){
+    dispatcher.onGet('/app', function (req, res) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        fs.readFile(__dirname + '/../client/index.html', 'utf8', function (err, html) {
             res.end(html);
-        })
-    });
+          });
+      });
 
 
     // RETURN CLIENT DIR ON /dist/ request
-    dispatcher.beforeFilter(/\//, function(req, res, chain) {
+    dispatcher.beforeFilter(/\//, function (req, res, chain) {
         const file_url = __dirname + '/../client' + req.url,
             file_mime = mime.lookup(file_url);
 
-        if(/\/dist\//.test(req.url)){
+        if (/\/dist\//.test(req.url)) {
 
-            res.writeHead(200, {'Content-Type': file_mime});
+          res.writeHead(200, { 'Content-Type': file_mime });
 
-            if(file_mime==='image/jpeg' || file_mime==='image/png'){
-                const img = fs.readFileSync(file_url);
-                res.write(img, 'binary');
-                res.end();
-            }else{
-                fs.readFile(file_url, 'utf8', function(err, file) {
-                    res.end(file);
-                });
-            }
+          if (file_mime === 'image/jpeg' || file_mime === 'image/png') {
+            const img = fs.readFileSync(file_url);
+            res.write(img, 'binary');
+            res.end();
+          }else {
+            fs.readFile(file_url, 'utf8', function (err, file) {
+                res.end(file);
+              });
+          }
 
-        }else{
-            chain.next(req, res, chain);
+        }else {
+          chain.next(req, res, chain);
         }
 
-    });
+      });
 
-};
+  };
 
-
-const addGuest = function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+const addGuest = function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
 
     const user = req.params;
 
-    storage.has('directory-dialog', function(error, hasKey) {
+    storage.has('directory-dialog', function (error, hasKey) {
         if (error) {
           throw error;
         }
 
         if (hasKey) {
-          storage.get('directory-dialog', function(error, data) {
+          storage.get('directory-dialog', function (error, data) {
               if (error) {
                 res.end(error);
                 throw error;
@@ -71,7 +71,7 @@ const addGuest = function(req, res) {
 
               fs.writeFile(data.path + '/test.txt',
                   JSON.stringify(user),
-                  function(err) {
+                  function (err) {
                       if (err) {
                         res.end(err);
                         throw err;
@@ -79,7 +79,6 @@ const addGuest = function(req, res) {
                         res.end('success');
                       }
                     });
-
 
             });
         } else {
@@ -89,11 +88,11 @@ const addGuest = function(req, res) {
 
   };
 
-
 module.exports = {
   init: init,
-  isInitialized: function() {
+  isInitialized: function () {
         return initialized;
-    },
-  instance: dispatcher
+      },
+
+  instance: dispatcher,
 };

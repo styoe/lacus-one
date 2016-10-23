@@ -6,7 +6,6 @@ const React = require('react'),
 
 
 const Header = ({app, openWifiModal}) => (
-
     <header className="main-header">
         <div className="main-header__logo"></div>
         <div className="main-header__wifi" onClick={() => openWifiModal()}></div>
