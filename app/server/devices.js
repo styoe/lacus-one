@@ -1,11 +1,11 @@
 const RELAYS_CONFIG = require('../conf').RELAYS_CONFIG,
     DEBUG = require('../conf').DEBUG,
     serialport = require('serialport'),
-    raspi = require('raspi-io'),
+    Raspi = require('raspi-io'),
     five = require('johnny-five'),
     relayFactory = require('./devices/relay'),
     tmphig = require('./devices/tmphig'),
-    io = new raspi(),
+    io = new Raspi(),
     board = new five.Board({
         io: io,
       });
@@ -19,15 +19,14 @@ const devices = {
       },
   };
 
-//SETUP BOARD
 board.on('ready', function () {
     if (DEBUG) console.log('board ready');
 
     let inject = {};
 
     // SETUP RELAYS
-    for (let rel_conf of RELAYS_CONFIG) {
-      let relay = relayFactory(rel_conf);
+    for (let rel of RELAYS_CONFIG) {
+      let relay = relayFactory(rel);
 
       devices.list.push(relay);
       inject[relay.uid] = relay;

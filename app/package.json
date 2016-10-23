@@ -8,8 +8,8 @@
   "scripts": {
     "start": "udevadm trigger && electron main.js",
     "startwin": "electron main.js",
-    "dev": "set NODE_ENV=dev&& webpack-dev-server -d --progress --inline --colors --display-error-details --content-base .",
-    "build": "set NODE_ENV=production&& webpack --progress --colors --display-error-details --content-base .",
+    "dev": "webpack-dev-server -d --progress --inline --colors --display-error-details --content-base .",
+    "build": "webpack --progress --colors --display-error-details --content-base .",
     "rebuild": "electron-rebuild -f -w serialport"
   },
   "repository": {

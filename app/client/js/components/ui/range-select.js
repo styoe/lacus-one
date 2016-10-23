@@ -63,7 +63,8 @@ const Rangepicker = React.createClass({
 
         var range = [];
         for (var i = this.state.bottom; i <= this.state.top; i++) {
-          range.push(<Nr key={i} value={i} onClick={()=>this.setValue(i)} />);
+          let val = i;
+          range.push(<Nr key={val} value={val} onClick={()=>this.setValue(val)} />);
         }
 
         return (
