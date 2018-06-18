@@ -2,32 +2,49 @@
 
 A small electron application for raspberry pi serialport manipulation.
 
------------------- Add new flow ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss1.png)
+##The box
+![1](img/1.jpg?raw=true)
 
-------------------  Edit flow ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss2.png)
+##Raspberry, relays, clock and power
+![2](img/2.jpg?raw=true)
 
-------------------  Add some gates and components ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss3.png)
+##Back side of monitor
+![3](img/3.jpg?raw=true)
 
-------------------  Available gates and components ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss4.png)
+##Clean state, no flows added
+Tap on plus to add component
+![4](img/4.jpg?raw=true)
 
-------------------  Turn flow off or on ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/09/ss5.png)
+##Added a flow
+![5](img/5.jpg?raw=true)
 
------------------- Wrapp it up in something prettier than this ------------------
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/10/IMG-1474815545852-V.jpg)
+##Edit flow
+Tapping on edit icon opens flow detail view
+![6](img/6.jpg?raw=true)
 
-![alt tag](http://thecodefather.eu/wp-content/uploads/2016/10/IMG-1474815527127-V.jpg)
+##Add flow component
+Tapping on plus icon, opens component selection view, currently there are 4 relays active, temperature module, humidity module, time range module, and two gates, and & or.
+![6](img/6_1.jpg?raw=true)
 
-And you are good to go!
+##Multiple flow components added
+Here you can see how example flow configuration works, Gate components take other components as children, and can be infinitely nested. On this example, if the clock shows between 03:00 and 09:00, and humidity is less than 77, relay2 will switch on. By composing components, almost any desired behaviour can be achieved.
+![6](img/6_2.jpg?raw=true)
+
+##Reordering components
+A newly added component always ends at the end of the stack. By tapping the reorder icon in the top right corner of component, you can change the components position or add it inside a gate.
+![6](img/7.jpg?raw=true)
+
+##Multiple flows
+You can turn the flow off or on by tapping on the switch. + (: My fat finger for scale
+![6](img/8.jpg?raw=true)
+
+##Hydrometer / Termometer
+![6](img/9.jpg?raw=true)
 
 
 # How this works
 First of all, this is work in progress, so any advice is welcome.
-The app is built on electron and it uses React to handle the UI.
+The app is built on electron and it uses React and Redux to handle the UI.
 
 For serialport manipulation you can use anything. I used serialport.js, johnny-five.js and a standalone rpi-dht-sensor
 because johnny-five supports only digital input.
