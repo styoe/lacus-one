@@ -2,44 +2,44 @@
 
 A small electron application for raspberry pi serialport manipulation.
 
-##The box
+### The box
 ![1](img/1.jpg?raw=true)
 
-##Raspberry, relays, clock and power
+### Raspberry, relays, clock and power
 ![2](img/2.jpg?raw=true)
 
-##Back side of monitor
+### Back side of monitor
 ![3](img/3.jpg?raw=true)
 
-##Clean state, no flows added
+### Clean state, no flows added
 Tap on plus to add component
 ![4](img/4.jpg?raw=true)
 
-##Added a flow
+### Added a flow
 ![5](img/5.jpg?raw=true)
 
-##Edit flow
+### Edit flow
 Tapping on edit icon opens flow detail view
 ![6](img/6.jpg?raw=true)
 
-##Add flow component
+### Add flow component
 Tapping on plus icon, opens component selection view, currently there are 4 relays active, temperature module, humidity module, time range module, and two gates, and & or.
-![6](img/6_1.jpg?raw=true)
+![6_1](img/6_1.jpg?raw=true)
 
-##Multiple flow components added
+### Multiple flow components added
 Here you can see how example flow configuration works, Gate components take other components as children, and can be infinitely nested. On this example, if the clock shows between 03:00 and 09:00, and humidity is less than 77, relay2 will switch on. By composing components, almost any desired behaviour can be achieved.
-![6](img/6_2.jpg?raw=true)
+![6_2](img/6_2.jpg?raw=true)
 
-##Reordering components
+### Reordering components
 A newly added component always ends at the end of the stack. By tapping the reorder icon in the top right corner of component, you can change the components position or add it inside a gate.
-![6](img/7.jpg?raw=true)
+![7](img/7.jpg?raw=true)
 
-##Multiple flows
+### Multiple flows
 You can turn the flow off or on by tapping on the switch. + (: My fat finger for scale
-![6](img/8.jpg?raw=true)
+![8](img/8.jpg?raw=true)
 
-##Hydrometer / Termometer
-![6](img/9.jpg?raw=true)
+### Hydrometer / Termometer
+![9](img/9.jpg?raw=true)
 
 
 # How this works
